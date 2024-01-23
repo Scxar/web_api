@@ -1,10 +1,13 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Uppdatera länken för att göra olika typer av uträkningar\n /add för Addition\n /sub för Subtraction \n /multi för Multiplikation\n /div för Division\n Sedan lägger du till följande:\n ?num1=A&num2=B\n Där A och B är tal");
 
 app.MapGet("/add", (int num1, int num2) => AddNumbers(num1, num2));
-app.MapGet("/subtract", (int num1, int num2) => SubtractNumbers(num1, num2));
+app.MapGet("/sub", (int num1, int num2) => SubtractNumbers(num1, num2));
+app.MapGet("/multi", (int num1, int num2) => MultiplyNumbers(num1, num2));
+app.MapGet("/div", (int num1, int num2) => DivideNumbers(num1, num2));
+
 
 app.Run();
 
@@ -15,5 +18,13 @@ string AddNumbers(int num1, int num2)
 string SubtractNumbers(int num1, int num2)
 {
     return $"Differensen av {num1} och {num2} är {num1 - num2}";
+}
+string MultiplyNumbers(int num1, int num2)
+{
+    return $"Produkten av {num1} och {num2} är {num1 * num2}";
+}
+string DivideNumbers(int num1, int num2)
+{
+    return $"Kvoten av {num1} och {num2} är {num1 / num2}";
 }
 
