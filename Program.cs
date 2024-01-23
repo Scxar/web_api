@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Uppdatera länken för att göra olika typer av uträkningar\n /add för Addition\n /sub för Subtraction \n /multi för Multiplikation\n /div för Division\n Sedan lägger du till följande:\n ?num1=A&num2=B\n Där A och B är tal");
+app.MapGet("/", () => "Uppdatera länken för att göra olika typer av uträkningar\n\n /add för Addition\n /sub för Subtraction \n /multi för Multiplikation\n /div för Division\n\n\n Sedan lägger du till följande:\n\n ?num1=A&num2=B\n\n Där A och B är tal");
 
 app.MapGet("/add", (int num1, int num2) => AddNumbers(num1, num2));
 app.MapGet("/sub", (int num1, int num2) => SubtractNumbers(num1, num2));
