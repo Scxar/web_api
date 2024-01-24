@@ -6,7 +6,7 @@ app.MapGet("/", () => "Uppdatera länken för att göra olika typer av uträknin
 app.MapGet("/add", (int num1, int num2) => AddNumbers(num1, num2));
 app.MapGet("/sub", (int num1, int num2) => SubtractNumbers(num1, num2));
 app.MapGet("/multi", (int num1, int num2) => MultiplyNumbers(num1, num2));
-app.MapGet("/div", (int num1, int num2) => DivideNumbers(num1, num2));
+app.MapGet("/div", (float num1, float num2) => DivideNumbers(num1, num2));
 
 
 app.Run();
@@ -23,10 +23,12 @@ string MultiplyNumbers(int num1, int num2)
 {
     return $"Produkten av {num1} och {num2} är {num1 * num2}";
 }
-string DivideNumbers(int num1, int num2)
+string DivideNumbers(float num1, float num2)
 {
     if (num2 = 0)
+    {
         return "Du kan inte dividera med 0";
+    }  
     return $"Kvoten av {num1} och {num2} är {num1 / num2}";
 }
 
