@@ -25,10 +25,6 @@ string MultiplyNumbers(int num1, int num2)
 }
 string DivideNumbers(float num1, float num2)
 {
-    if (num2 = 0)
-    {
-        return "Du kan inte dividera med 0";
-    }  
     return $"Kvoten av {num1} och {num2} är {num1 / num2}";
 }
 
